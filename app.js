@@ -1,6 +1,7 @@
 import express from 'express';
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 // Listado de ejemplo de clientes
 const clientes = [
 	{
@@ -22,11 +23,13 @@ const clientes = [
 		telefono: '998877665'
 	}
 ];
+
 // Endpoint para listar clientes
 app.get('/clientes', (req, res) => {
 	res.json(clientes);
 });
 app.listen(PORT, () => {
+    console.log(`SERVIDOR INICIADO`);
 	console.log(`Servidor Express escuchando en http://localhost:${PORT}`);
 });
 
